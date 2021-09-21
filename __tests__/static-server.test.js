@@ -4,10 +4,10 @@ import { readFile } from 'fs/promises';
 
 describe('Routes for static server', () => {
   it('should return index.html', async () => {
-    const [res, index] = await Promise.all([
+    const [response, index] = await Promise.all([
       request(app).get('/'),
       readFile('./public/index.html', 'utf-8'),
     ]);  
-    expect(res.text).toEqual(index);
+    expect(response.text).toEqual(index);
   });
 });
