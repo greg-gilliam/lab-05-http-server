@@ -10,10 +10,11 @@ describe('Routes for static server', () => {
     ]);  
     expect(response.text).toEqual(index);
   });
-  // it('it tests for the return of CSS from GET', async() => {
-  //   const [response, file] = await Promise.all([
-  //     request(app).get('/styles/main.css'),
-  //     readFile('./public/styles/main.css', 'utf-8')
-  //   ]);
-  // });
+  it('It tests for the return of CSS from GET of /styles/main.css', async () => {
+    const [response, file] = await Promise.all([
+      request(app).get('/css/main.css'),
+      readFile('./public/css/main.css', 'utf-8')
+    ]);
+    expect(response.text).toEqual(file);
+  });
 });
