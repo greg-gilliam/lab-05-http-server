@@ -2,10 +2,10 @@
     "name": "demo",
     "version": "1.0.0",
     "description": "",
-    "main": "server.js",
-    "type": "module",
+    "main": "index.js",
+    "type": "commonjs",
     "scripts": {
-      "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --verbose --runInBand --testLocationInResults",
+      "test": "jest --verbose --runInBand --testLocationInResults",
       "test:watch": "npm run test -- --watch",
       "start": "node server.js",
       "start:watch": "nodemon server.js"
